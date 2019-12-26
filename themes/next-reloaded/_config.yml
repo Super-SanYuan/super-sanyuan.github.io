@@ -35,7 +35,8 @@ custom_file_path:
 
 favicon:
   small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  #medium: /images/favicon-32x32-next.png
+  medium: /images/favicon.ico
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -57,6 +58,13 @@ footer:
 
   # 版权信息 默认作者
   copyright:
+
+  # 访问数
+  counter: true
+
+  # 网站运行时间
+  runtime:
+    enable: true
 
   # 底部 hexo 信息
   powered:
@@ -244,16 +252,15 @@ symbols_count_time:
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
 
-# Reward (Donate)
-# Front-matter variable (unsupport animation).
+# 打赏
 reward_settings:
   # If true, reward will be displayed in every article by default.
-  enable: false
-  animation: false
-  #comment: Donate comment here.
+  enable: true
+  animation: true
+  comment: 请作者喝杯咖啡
 
 reward:
-  #wechatpay: /images/wechatpay.png
+  wechatpay: /images/wechatpay.jpg
   #alipay: /images/alipay.png
   #bitcoin: /images/bitcoin.png
 
@@ -675,15 +682,15 @@ firestore:
   apiKey: # Required
   projectId: # Required
 
-# Show Views / Visitors of the website / page with busuanzi.
+# 显示阅读数
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
-  total_visitors: true
+  enable: true
+  total_visitors: true #统计访客数
   total_visitors_icon: user
-  total_views: true
+  total_views: true #统计访问数
   total_views_icon: eye
-  post_views: true
+  post_views: true #统计文章阅读数
   post_views_icon: eye
 
 # ---------------------------------------------------------------
@@ -779,7 +786,7 @@ mermaid:
   theme: forest
 
 # ---------------------------------------------------------------
-# Animation Settings
+# 动画设置
 # ---------------------------------------------------------------
 
 # Use velocity to animate everything.
@@ -815,16 +822,16 @@ pace:
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
-  enable: false
+  enable: true
   three_waves: false
-  canvas_lines: false
+  canvas_lines: true
   canvas_sphere: false
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 # For more information: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   onmobile: true # Display on mobile or not
   color: "0,0,255" # RGB values, use `,` to separate
   opacity: 0.5 # The opacity of line: 0~1
