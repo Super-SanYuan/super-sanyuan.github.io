@@ -54,6 +54,7 @@
 {%- endif %}
 
 {% if theme.footer.runtime.enable %}
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
   <span>本站已运行<span id="htmer_time"></span></span>
   <script>
       function secondToDate(second) {
@@ -113,7 +114,7 @@
 {% endif %}
 
 {% if theme.footer.counter %}
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   <script async src="/js/busuanzi.pure.mini.js"></script>
 {% endif %}
 
 {%- if theme.footer.theme.enable %}

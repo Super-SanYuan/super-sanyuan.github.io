@@ -60,7 +60,7 @@ footer:
   copyright:
 
   # 访问数
-  counter: true
+  counter: false
 
   # 网站运行时间
   runtime:
@@ -685,7 +685,7 @@ firestore:
 # 显示阅读数
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true #统计访客数
   total_visitors_icon: user
   total_views: true #统计访问数
@@ -824,7 +824,7 @@ pace:
 three:
   enable: true
   three_waves: false
-  canvas_lines: true
+  canvas_lines: false
   canvas_sphere: false
 
 # Canvas-nest
@@ -970,7 +970,7 @@ vendors:
   # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
-  three:
+  three: /js/three.min.js
   three_waves:
   canvas_lines:
   canvas_sphere:
