@@ -37,7 +37,7 @@ categories:
 第二种:可以单独写在js文件中-->js文件中不需要使用<script>标签
 ```
 
-> <script>标签的属性:
+> `<script>`标签的属性:
 
 - src 表示要引入的外部文件
 - type 表示脚本语言的类型 text/javascript,默认值就是它.
@@ -48,6 +48,6 @@ categories:
 
 > 注意事项
 
-- <script>标签尽量放在<body>标签内,放在结束的</body>标签前
-  - 一个<script>标签如果用于引入外部 js 文件,就不要在标签内写 script 代码
-- html 文件中可以同时存在多对<script>标签,浏览器会依次解析执行
+- `<script>`标签尽量放在`<body>`标签内,放在结束的`</body>`标签前
+- 一个`<script>`标签如果用于引入外部 js 文件,就不要在标签内写 script 代码
+- html 文件中可以同时存在多对`<script>`标签,浏览器会依次解析执行
