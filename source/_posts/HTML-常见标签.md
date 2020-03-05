@@ -1,0 +1,290 @@
+---
+title: HTML-常见标签
+date: 2020-03-05 17:44:35
+tags:
+  - HTML
+categories:
+  - HTML
+---
+
+## 标题标签
+
+HTML 标题是通过 `<h1>-<h6>` 等标签定义
+head 的缩写, 意为头部、标题
+`<h1>` 定义最大的标题。`<h6>` 定义最小的标题。
+
+```html
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+```
+
+## 段落标签
+
+HTML 段落是通过 `<p>` 标签定义的 单词: paragraph
+可以将文字分成若干段落
+
+```html
+<p>这是第一个段落</p>
+<p>这是第二个段落</p>
+```
+
+## 换行
+
+可以通过 `<br />` 标签进行换行 单词: break
+
+```html
+<p>
+  这是第一行内容 <br />
+  这是第二行内容
+</p>
+```
+
+## 加粗
+
+```html
+<b>加粗</b> <strong>推荐使用 strong 标签进行 加粗</strong>
+```
+
+## 倾斜
+
+```html
+<em>倾斜 推荐使用em</em> <i>倾斜</i>
+```
+
+## 删除线
+
+```html
+<del>删除线</del> <s>删除线</s>
+```
+
+## 下划线
+
+```html
+<ins>推荐使用 下划线</ins> <u>下划线</u>
+```
+
+## div and span
+
+` <div>``<span> ` 是两个没有语义的标签
+
+```html
+<div>我占满一整行</div>
+<span>我不会占满一行</span>
+```
+
+## 图像
+
+HTML 图像是通过 `<img>` 标签定义的
+
+```html
+<!-- src: 指向图片路径; title: 鼠标经过图片显示; alt: 图片未显示时展示文字 -->
+<!-- width: 宽度; height: 高度; border: 边框 -->
+<img
+  src="图片链接.jpg"
+  title="我是一张图"
+  alt="如果你看到我, 说明图没显示出来"
+/>
+```
+
+## 链接
+
+HTML 链接是通过 `<a>` 标签定义的
+
+```html
+<!-- href: 资源对应路径, 如果给的不是链接而是 `#name(锚点) 将会在页面内进行跳转 -->
+<!-- target: 打开方式 _self 默认当前窗口打开; _blank: 新窗口打开 -->
+<a href="https://ginger-jiang.github.io/">Ginger Blogs</a>
+```
+
+## 注释
+
+HTML 中的注释内容也会被浏览器忽略, 不会显示出来
+
+```html
+<!-- 这就是注释 它不会被浏览器显示出现 -->
+```
+
+## 特殊字符
+
+特殊字符:
+
+- `&nbsp;`: 空格
+- `&lt;`: 小于
+- `&gt;`: 大于
+- `&AMP;`: &
+- `&yen;`: ¥
+- `$copy;`: ©
+
+## 表格标签
+
+属性:
+
+- align: {left | center | right} 对齐方式 (弃用)
+- border: 边框 (弃用)
+- cellpadding: 单元格与内容之间距离
+- cellspacing: 单元格之间的空白 默认 2 像素
+- width: 宽度
+- height: 高度
+
+合并单元格
+
+- rowspan: 跨行合并
+- colspan: 跨列合并
+
+案例:
+
+```html
+<!-- 表格 -->
+<table
+  align="center"
+  border="1"
+  cellpadding="5"
+  cellspacing="0"
+  width="100"
+  height="100"
+>
+  <!-- 表头区 -->
+  <thead>
+    <tr>
+      <!-- 表头单元格 -->
+      <th>
+        单个单元格
+      </th>
+    </tr>
+  </thead>
+
+  <!-- 内容区 -->
+  <tbody>
+    <!-- 行 -->
+    <tr>
+      <!-- 单元格 -->
+      <td>
+        单个单元格
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## 列表标签
+
+### 无序列表
+
+```html
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+```
+
+### 有序列表
+
+```html
+<ol>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ol>
+```
+
+### 自定义列表
+
+```html
+<dl>
+  <dt>关注我们</dt>
+  <dd>新浪微博</dd>
+  <dd>官方微信</dd>
+</dl>
+```
+
+## 表单
+
+- 表单控件
+- 提示信息
+- 表单域
+
+### 表单域
+
+包含表单元素的区域
+
+```html
+<form action="url地址" method="提交方式" name="表单名称">
+  <!-- 表单元素控件 -->
+</form>
+```
+
+### 表单元素 input
+
+- type 类型
+
+  - text: 文本框
+  - password: 密码
+  - radio: 单选
+  - checkbox: 复选框
+  - submit: 提交按钮
+  - reset: 重置按钮
+  - button: 点击按钮
+  - file: 文件域(上传文件)
+
+- name: 表单名
+- value: 值
+- checked: 默认被选中
+- maxlength: 输入最大值
+-
+
+```html
+<form action="url" method="GET" name="login">
+  用户名:<input type="text" name="username" maxlength="6" />
+  <hr />
+  密码:<input type="password" name="password" />
+  <hr />
+  性别: 男<input type="radio" checked name="sex" /> 女<input
+    type="radio"
+    name="sex"
+  />
+  <hr />
+</form>
+```
+
+### label 标签
+
+label 为 input 元素定义标注 通过 `for` 与 表单元素的 `id` 绑定
+
+```html
+<form name="login" action="url" method="GET">
+  <label for="sex"> 男: <input type="radio" id="sex" /> </label>
+</form>
+```
+
+## 下拉标签
+
+属性:
+
+- selected: 默认选择
+
+```html
+<select>
+  <option selected>请选择</option>
+  <option>北京</option>
+  <option>上海</option>
+  <option>湖南</option>
+</select>
+```
+
+## 文本域
+
+属性:
+
+- cols: 多少行字
+- rows: 多少列字
+
+```html
+<form action="url" method="GET" name="login">
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+</form>
+```
