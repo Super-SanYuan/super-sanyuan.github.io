@@ -4,7 +4,7 @@ date: 2020-03-19 10:24:14
 tags:
   - Vue
 categories:
-  - Vuew
+  - Vue
 ---
 
 ## Action
