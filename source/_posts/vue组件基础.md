@@ -19,10 +19,10 @@ categories:
 Vue.component('hello-world', {
   data() {
     return {
-      msg: 'Hi! Vue'
+      msg: 'Hi! Vue',
     }
   },
-  template: '<div> {{ msg }} </div>'
+  template: '<div> {{ msg }} </div>',
 })
 ```
 
@@ -41,7 +41,7 @@ Vue.component('hello-world', {
 ## 组件的组织
 
 一个应用会以一颗嵌套的组件树的形式来组织:
-![component](../image/components.png)
+![component](../images/vue/components.png)
 
 ## 通过 `Prop` 向子组件传递数据
 
@@ -51,7 +51,7 @@ Prop 是可以在组件上注册的一些自定义 attribute, 当一个值传递
 ```js
 Vue.component('hello-world', {
   props: ['title'],
-  template: '<h3> {{ title }}</h3>'
+  template: '<h3> {{ title }}</h3>',
 })
 ```
 
@@ -149,5 +149,5 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题, 父组�
 
 ```js
 // 组件会在 currentTabComponent 改变时改变
-<component v-bind:is="currentTabComponent"></component>
+<component v-bind:is='currentTabComponent'></component>
 ```

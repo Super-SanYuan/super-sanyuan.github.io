@@ -69,4 +69,4 @@ vm.$el === document.getElementById('app') // true
 
 ### 生命周期图示
 
-![生命周期](../image/vue生命周期.png)
+![生命周期](../images/vue/vue生命周期.png)

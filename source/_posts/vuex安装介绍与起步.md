@@ -50,7 +50,7 @@ new Vue({
   // state
   data() {
     return {
-      count: 0
+      count: 0,
     }
   },
   // view
@@ -59,8 +59,8 @@ new Vue({
   methods: {
     increment() {
       this.count++
-    }
-  }
+    },
+  },
 })
 ```
 
@@ -72,7 +72,7 @@ new Vue({
 
 以下是一个表示单项数据流理念的简单示意图:
 
-![flow](../../image/flow.png)
+![flow](../images/vue/flow.png)
 
 当我们遇到多个组件共享状态时, 单项数据流的简洁性很容易被破坏:
 
@@ -88,7 +88,7 @@ new Vue({
 
 这就是 Vuex 背后的基本思想，借鉴了 Flux、Redux 和 The Elm Architecture。与其他模式不同的是，Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新
 
-![vuex](../../image/vuex.png)
+![vuex](../images/vue/vuex.png)
 
 ## 什么情况下应该使用 Vuex?
 
@@ -111,13 +111,13 @@ Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架
 ```js
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
   },
   mutations: {
     increment(state) {
       state.count++
-    }
-  }
+    },
+  },
 })
 ```
 
