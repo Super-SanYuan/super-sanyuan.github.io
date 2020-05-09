@@ -13,7 +13,7 @@ categories:
 
 > 解析参数 selector 和 context 公有 12 个有效分支
 
-![jQuery.fn.init](../../images/02构造jQuery对象/jQuery.fn.init.png)
+![jQuery.fn.init](../images/jQuery-source-code/02构造jQuery对象/jQuery.fn.init.png)
 
 ## 源码分析
 
@@ -22,10 +22,10 @@ categories:
 ```js
 jQuery.fn = jQuery.prototype = {
   constructor: jQuery,
-  init: function(selector, context, rootjQuery) {
-    var match, elem, ret, doc;
-  }
-};
+  init: function (selector, context, rootjQuery) {
+    var match, elem, ret, doc
+  },
+}
 ```
 
 在 `init()` 构造函数定义中接受三个参数 selector、context、rootjQuery
@@ -38,16 +38,16 @@ rootjQuery 定义与应用场景
 
 ```js
 // document.getElementById() 查找失败
-return rootjQuery.find(selector);
+return rootjQuery.find(selector)
 
 // slector 是选择器且未指定 context
-return (context || rootjQuery).find(selector);
+return (context || rootjQuery).find(selector)
 
 // selector 是函数
-return rootjQuery.ready(selector);
+return rootjQuery.ready(selector)
 
 // rootjQuery 定义
-rootjQuery = jQuery(doucment);
+rootjQuery = jQuery(doucment)
 ```
 
 ## 参数 selector 可以转换为 false
@@ -57,7 +57,7 @@ rootjQuery = jQuery(doucment);
 ```js
 // Handle $('')、$(null) or $(undefined)
 if (!selector) {
-  return this;
+  return this
 }
 ```
 
@@ -68,9 +68,9 @@ if (!selector) {
 ```js
 // Handle $(DOMELement)
 if (selector.nodeType) {
-  this.context = this[0] = selector;
-  this.length = 1;
-  return this;
+  this.context = this[0] = selector
+  this.length = 1
+  return this
 }
 ```
 
@@ -81,11 +81,11 @@ if (selector.nodeType) {
 ```js
 // The body element only exists once, optimize finding it
 if (selector === 'body' && !context && document.body) {
-  this.context = document;
-  this[0] = document.body;
-  this.selector = selector;
-  this.length = 1;
-  return this;
+  this.context = document
+  this[0] = document.body
+  this.selector = selector
+  this.length = 1
+  return this
 }
 ```
 
@@ -103,7 +103,7 @@ if (typeof selector === 'string') {
     selector.length >= 3
   ) {
     // 如果是以 `<` 开头 `>` 结尾的  并且长度大于等于 3  跳过 正则 检查
-    match = [null, selector, mull];
+    match = [null, selector, mull]
   } else {
     /**
      * 使用正则检查  quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/
@@ -115,7 +115,7 @@ if (typeof selector === 'string') {
      * quickExpr.exec('div'); // null
      * quickExpr.exec('<div><img></div>'); // ["<div><img></div>","<div><img></div>",undefined]
      */
-    match = quickExpr.exec(selector);
+    match = quickExpr.exec(selector)
   }
 }
 ```
@@ -132,22 +132,22 @@ if (typeof selector === 'string') {
 if (match && (match[1] || !context)) {
   // HANDLE: $(html) -> $(array)
   if (match[1]) {
-    context = context instanceof jQuery ? context[0] : context;
+    context = context instanceof jQuery ? context[0] : context
 
-    doc = context ? context.ownerDocument || context : document;
+    doc = context ? context.ownerDocument || context : document
 
     // 如果传入单个字符 并且是个单标签 直接创建 跳过其他
     // rsingleTag = /^<(\w+)\s*\/?>(?:<\/\1>)?$/,
-    ret = rsingleTag.exec(selector);
+    ret = rsingleTag.exec(selector)
 
     if (ret) {
       // jQuery.isPlainObject() 用于检测对象是否是纯粹的对象 即用对象直接量 {} 或者 new Object() 创建的对象
       if (jQuery.isPlainObject(context)) {
-        selector = [document.createElement(ret[1])];
+        selector = [document.createElement(ret[1])]
         // attr() 遇到特殊属性和事件类型时会执行同名 jQuery 方法
-        jQuery.fn.attr.call(selector, context, true);
+        jQuery.fn.attr.call(selector, context, true)
       } else {
-        selector = [doc.createElement(res[1])];
+        selector = [doc.createElement(res[1])]
       }
     }
   }
@@ -186,21 +186,21 @@ if (match && (match[1] || !context)) {
 ```js
 {
   // 查找含有指定 id 属性的 DOM 元素
-  elem = document.getElementById(mathc[2]);
+  elem = document.getElementById(mathc[2])
 
   if (elem && elem.parentNode) {
     // 检查 id 是否相等
     if (elem.id !== match[2]) {
-      return rootjQuery.find(selector);
+      return rootjQuery.find(selector)
     }
 
-    this.length = 1;
-    this[0] = elem;
+    this.length = 1
+    this[0] = elem
   }
 
-  this.context = document;
-  this.selector = selector;
-  return this;
+  this.context = document
+  this.selector = selector
+  return this
 }
 ```
 
@@ -238,8 +238,8 @@ if (match && (match[1] || !context)) {
 // 如果参数包含 selector 就认为是 jQuery 对象
 if (selector.selector !== undefined) {
   // 复制他的属性 selector 和 context
-  this.selector = selector.selector;
-  this.context = selector.context;
+  this.selector = selector.selector
+  this.context = selector.context
 }
 ```
 
@@ -252,9 +252,9 @@ if (selector.selector !== undefined) {
  * 如果是其他类型的值, 则作为第一个元素放入当前 jQuery 对象中
  * 最后返回当前 jQuery 对象
  */
-return jQuery.makeArray(selector, this);
+return jQuery.makeArray(selector, this)
 ```
 
 ## 总览
 
-![jQuery.fn.init_](../../images/02构造jQuery对象/jQuery.fn.init_.png)
+![jQuery.fn.init_](../images/jQuery-source-code/02构造jQuery对象/jQuery.fn.init_.png)

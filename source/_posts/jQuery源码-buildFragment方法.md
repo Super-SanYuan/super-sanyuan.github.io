@@ -46,7 +46,7 @@ var Fragment, // 指向稍后可能创建的文档片段 Document Fragment
   eacheable, // 表示 HTML 代码 是否符合缓存条件
   eacheresults, // 指向从缓存对象 jQuery.ftagment 中提取到的文档片段 包含了缓存的DOM元素
   doc, // 表示创建文档片段的文档对象
-  fitst = args[0];
+  fitst = args[0]
 
 /**
  * 修正文档对象 doc
@@ -55,12 +55,12 @@ var Fragment, // 指向稍后可能创建的文档片段 Document Fragment
  * 如果不存在 则假定nodes[0]为文档对象并赋值给doc
  */
 if (nodes && nodes[0]) {
-  doc = nodes[0].ownerDocument || node[0];
+  doc = nodes[0].ownerDocument || node[0]
 }
 
 // 检查传入参数对象是不是文档对象 如果不是文档对象 而是 JavaScript 对象 就修正 doc 为当前文档对象 document
 if (!doc.createDocumentFragment) {
-  doc = document;
+  doc = document
 }
 ```
 
@@ -108,9 +108,9 @@ jQuery.fragments = {}
 // 如果为 true 表示需要直型转换过程
 if (!fragment) {
   // 调用原生方法 创建文档片段
-  fragment = doc.createDocumentFragment();
+  fragment = doc.createDocumentFragment()
   // 将片段转换为 DOM 元素
-  jQuery.clean(args, doc, fragment, scripts);
+  jQuery.clean(args, doc, fragment, scripts)
 }
 ```
 
@@ -121,7 +121,7 @@ if (!fragment) {
 ```js
 // 如果符合缓存条件 就缓存
 if (cacheable) {
-  jQuery.fragments[first] = cacheresults ? fragment : 1;
+  jQuery.fragments[first] = cacheresults ? fragment : 1
 }
 ```
 
@@ -134,10 +134,10 @@ if (cacheable) {
 */
 return {
   fragment: fragment,
-  cacheable: cacheable
-};
+  cacheable: cacheable,
+}
 ```
 
 ## 总结
 
-![1](../../images/02构造jQuery对象/jQuery.buildFragment.png)
+![1](../images/jQuery-source-code/02构造jQuery对象/jQuery.buildFragment.png)
