@@ -15,7 +15,7 @@ jQuery 的模块总体分为三大部分:
 - 功能模块
 - 底层支持模块
 
-![模块导图](../images/01总体架构/jQuery.png)
+![模块导图](../images/jQuery-source-code/01总体架构/jQuery.png)
 
 ## 入口模块
 
