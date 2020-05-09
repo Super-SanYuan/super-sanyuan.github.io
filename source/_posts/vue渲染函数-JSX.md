@@ -60,9 +60,9 @@ Vue.component('anchored-heading', {
   props: {
     level: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 ```
 
@@ -79,9 +79,9 @@ Vue.component('anchored-heading', {
   props: {
     level: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 ```
 
@@ -97,7 +97,7 @@ Vue.component('anchored-heading', {
 </div>
 ```
 
-!['DOM'](../image/dom-tree.png)
+!['DOM'](../images/vue/dom-tree.png)
 
 每个元素都是一个节点。每段文字也是一个节点。甚至注释也都是节点。一个节点就是页面的一个部分。就像家谱树一样，每个节点都可以有孩子节点 (也就是说每个部分可以包含其它的一些部分)。
 
@@ -136,9 +136,9 @@ createElement(
     createElement('h1', '一则头条'),
     createElement(MyComponent, {
       props: {
-        someProp: 'foobar'
-      }
-    })
+        someProp: 'foobar',
+      },
+    }),
   ]
 )
 ```
@@ -216,16 +216,16 @@ createElement(
 ### 完整示例
 
 ```js
-var getChildrenTextContent = function(children) {
+var getChildrenTextContent = function (children) {
   return children
-    .map(function(node) {
+    .map(function (node) {
       return node.children ? getChildrenTextContent(node.children) : node.text
     })
     .join('')
 }
 
 Vue.component('anchored-heading', {
-  render: function(createElement) {
+  render: function (createElement) {
     // 创建 kebab-case 风格的 ID
     var headingId = getChildrenTextContent(this.$slots.default)
       .toLowerCase()
@@ -238,19 +238,19 @@ Vue.component('anchored-heading', {
         {
           attrs: {
             name: headingId,
-            href: '#' + headingId
-          }
+            href: '#' + headingId,
+          },
         },
         this.$slots.default
-      )
+      ),
     ])
   },
   props: {
     level: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 ```
 
@@ -389,13 +389,13 @@ import AnchoredHeading from './AnchoredHeading.vue'
 
 new Vue({
   el: '#demo',
-  render: function(h) {
+  render: function (h) {
     return (
       <AnchoredHeading level={1}>
         <span>Hello</span> world!
       </AnchoredHeading>
     )
-  }
+  },
 })
 ```
 
@@ -412,9 +412,9 @@ Vue.component('my-component', {
   },
   // 为了弥补缺少的实例
   // 提供第二个参数作为上下文
-  render: function(createElement, context) {
+  render: function (createElement, context) {
     // ...
-  }
+  },
 })
 ```
 
@@ -457,11 +457,11 @@ Vue.component('smart-list', {
   props: {
     items: {
       type: Array,
-      required: true
+      required: true,
     },
-    isOrdered: Boolean
+    isOrdered: Boolean,
   },
-  render: function(createElement, context) {
+  render: function (createElement, context) {
     function appropriateListComponent() {
       var items = context.props.items
 
@@ -477,7 +477,7 @@ Vue.component('smart-list', {
       context.data,
       context.children
     )
-  }
+  },
 })
 ```
 
@@ -490,10 +490,10 @@ Vue.component('smart-list', {
 ```js
 Vue.component('my-functional-button', {
   functional: true,
-  render: function(createElement, context) {
+  render: function (createElement, context) {
     // 完全透传任何 attribute、事件监听器、子节点等。
     return createElement('button', context.data, context.children)
-  }
+  },
 })
 ```
 
