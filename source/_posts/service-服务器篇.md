@@ -30,11 +30,11 @@ categories:
 
 点击轮播图活动进入后, 按照需求选择我们需要的服务器配置, 如果是个人学习、博客等使用, 最基本的即可
 
-![服务器](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-01.png)
+![服务器](../images/service-ci-cd/01/01-01.png)
 
 点击立即抢购之后, 跳入一个配置选择界面, 选择离自己所在地最近的城市, 选择机型配置, 选择 CentOS 系统
 
-![服务器](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-02.png)
+![服务器](../images/service-ci-cd/01/01-02.png)
 
 点击**立即购买**即可跳转付款页面, 核对无误后付款即可
 
@@ -42,11 +42,11 @@ categories:
 
 在腾讯云首页右上角有一个控制台按钮, 点击即可进入控制台
 
-![服务器](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-02.png)
+![服务器](../images/service-ci-cd/01/01-02.png)
 
 点击服务器后将会跳转至实例界面(如果没有实例就创建一个)
 
-![实例](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-04.png)
+![实例](../images/service-ci-cd/01/01-04.png)
 
 > 首次购买后会自动跳转至服务器控制台
 
@@ -66,11 +66,11 @@ ssh root@xx.xx.xx.xx
 
 > 输入密码不会显示, 输入完成后直接回车即可
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-05.png)
+![ssh](../images/service-ci-cd/01/01-05.png)
 
 如果看到如下界面就表示密码输入成功
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-06.png)
+![ssh](../images/service-ci-cd/01/01-06.png)
 
 输入 `cat /etc/redhat-release` 查看系统信息
 
@@ -78,7 +78,7 @@ ssh root@xx.xx.xx.xx
 cat /etc/redhat-release
 ```
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-07.png)
+![ssh](../images/service-ci-cd/01/01-07.png)
 
 ## 配置免密验证
 
@@ -100,7 +100,7 @@ ssh-keygen -t rsa -b 4096 -C "你的邮箱地址"
 
 这条命令执行完之后, 会提示指定公钥和私钥在本地机器上储存的位置, 因为我本地已经有秘钥了, 就从网上找了一张图
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-08.png)
+![ssh](../images/service-ci-cd/01/01-08.png)
 
 ### 将公钥储存到远程服务器主机
 
@@ -113,16 +113,16 @@ ssh-keygen -t rsa -b 4096 -C "你的邮箱地址"
 ssh-copy-id -i .ssh/id_rsa.pub root@xx.xx.xx.xx
 ```
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-09.png)
+![ssh](../images/service-ci-cd/01/01-09.png)
 
 根据提示, 输入服务器主机登录密码
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-10.png)
+![ssh](../images/service-ci-cd/01/01-10.png)
 
 如果看到如下提示, 表示添加成功
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-11.png)
+![ssh](../images/service-ci-cd/01/01-11.png)
 
 此时, 我们再使用 `ssh root@xx.xx.xx.xx` 对服务器进行访问, 就能直接登录, 不需要再输入密码了
 
-![ssh](https://github.com/Ginger-Jiang/service-ci-cd/blob/master/images/01/01-12.png)
+![ssh](../images/service-ci-cd/01/01-12.png)
