@@ -1,11 +1,11 @@
 # Hexo 配置
 
 # Site
-title: Ginger
+title: SanYuan
 subtitle: '一个前端er~'
 description: '未来可期'
 keywords: 'Web Node.js Vue React HTML CSS'
-author: Ginger
+author: SanYuan
 language: zh-CN
 timezone: ''
 
@@ -95,7 +95,7 @@ theme: next-reloaded # V6.0版本
 # 部署
 deploy:
   type: git
-  repo: git@github.com:Ginger-Jiang/Ginger-Jiang.github.io.git
+  repo: git@github.com:Super-SanYuan/super-sanyuan.github.io.git
   branch: master
 
 # 全局搜索
@@ -112,3 +112,10 @@ symbols_count_time:
   item_text_total: false
   awl: 4
   wpm: 275
+
+# google分析统计
+JB :
+  analytics :
+    provider : google 
+    google : 
+    tracking_id : 'UA-204401818-1'
