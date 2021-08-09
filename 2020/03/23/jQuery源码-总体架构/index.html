@@ -46,6 +46,19 @@
   };
 </script>
 
+  <script id="google-analytics">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-204401818-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-204401818-1');
+</script>
+</script>
+
   <meta name="description" content="总体架构jQuery 的模块总体分为三大部分:  入口模块(构造 jQuery 对象模块) 功能模块 底层支持模块   入口模块入口模块主要功能是构造 jQuery 对象, 如果在调用构造函数 jQuery() 创建 jQuery 对象时传入了选择器表达式, 则会调用功能模块中的选择器 Sizzle 遍历文档, 查找与之匹配的 DOM 元素, 并创建一个包含了这些 DOM 元素引用的 jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery源码-总体架构">
@@ -104,6 +117,18 @@
   </style>
 </noscript>
 
+  <script id="google-analytics">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204401818-1">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-204401818-1');
+  </script>
+  </script>
 <link rel="alternate" href="/atom.xml" title="SanYuan" type="application/atom+xml">
 </head>
 
